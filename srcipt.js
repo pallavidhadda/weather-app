@@ -51,7 +51,7 @@ $("document").ready(function () {
       const apiKey = "cf1a38783d74aa19fbbf3e3abc6391e0";
 
       $.getJSON(
-        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+        "http://api.openweathermap.org/data/2.5/weather?lat=" +
           lat +
           "&lon=" +
           long +
@@ -75,13 +75,37 @@ $("document").ready(function () {
 
           let rise = new Date(sunrise * 1000).getHours();
 
+          let celsius = (temp-32)*(5/9);
+
           if (now >= set && now <= rise) {
             $("body").addClass("dark");
           }
+          $(".degree-unit").click(function (){
+            let unit = $(".degree-unit").html();
+            console.log(unit)
+            if(unit == "°F")
+            {
+              $(".degree-section").fadeOut('slow',function(){
+                $(".degree-unit").html("°C");
+               $(".degree-value").html(Math.round(celsius*100)/100);
+              $(".degree-section").fadeIn('slow');
+              });
+
+              
+            }
+            else{
+              $(".degree-section").fadeOut('slow',function(){
+                $(".degree-unit").html("°F");
+               $(".degree-value").html(temp);
+              $(".degree-section").fadeIn('slow');
+              });
+            }
+          })
         }
       );
     });
   } else {
     $(".temperature-description").html("Can't find your location 😢");
   }
+ 
 });
