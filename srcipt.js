@@ -51,7 +51,7 @@ $("document").ready(function () {
       const apiKey = "cf1a38783d74aa19fbbf3e3abc6391e0";
 
       $.getJSON(
-        "http://api.openweathermap.org/data/2.5/weather?lat=" +
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
           lat +
           "&lon=" +
           long +
