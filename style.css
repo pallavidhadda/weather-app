@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: ease-in-out;
+}
+body {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  width: auto;
+
+  z-index: 0;
+  font-family: "Noto Sans HK", sans-serif;
+  font-size: 1.3rem;
+
+  background: linear-gradient(
+    0deg,
+    rgba(42, 90, 157, 1) 0%,
+    rgba(115, 193, 255, 1) 100%
+  );
+  background-size: 100vh 100vw;
+  background-size: cover;
+
+}
+.dark {
+  background: linear-gradient(
+    0deg,
+    rgba(42, 90, 157, 1) 0%,
+    rgb(1, 15, 27) 100%
+  );
+}
+
+.temperature,
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  flex-direction: column;
+}
+
+.location {
+  flex-direction: row;
+  height: 10vh;
+  position: absolute;
+  bottom: 2%;
+  width: 240px;}
+
+.temperature {
+  position: relative;
+  top: -40%;
+}
+.degree-section {
+  display: flex;
+  margin-bottom: 20px;
+  /* align-items: center; */
+}
+.degree-unit {
+  margin-left: 10px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.degree-value {
+  font-size: 3rem;
+  font-weight: 500;
+}
+img {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+#bg-img {
+  position: absolute;
+  width: 150vw;
+  height: 150vh;
+  margin: 0;
+  z-index: -10;
+  opacity: 0.1;
+  top: -180%;
+  right: -400%;
+  animation: bg 50s ease-in-out 0s infinite alternate none;
+}
+
+@keyframes bg {
+  from {
+    right: -150%;
+  }
+  to {
+    right: -1012%;
+  }
+}
+.location img{
+  width: 25px;
+  height: auto;
+  color: white;
+  margin: 0 7px;
+  
+}
+
+@media screen and ( max-width: 1100px ) {
+  #bg-img{
+    animation-duration: 30s;
+  }
+  @keyframes bg {
+    from {
+      right: -150%;
+    }
+    to {
+      right: -600%;
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------
+# ghost debug code
+--------------------------------------------------------------*/
+/* 
+* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
