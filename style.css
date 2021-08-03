@@ -70,6 +70,7 @@ body {
   margin-left: 10px;
   font-size: 3rem;
   cursor: pointer;
+  color: cyan;
 }
 .degree-value {
   font-size: 3rem;
